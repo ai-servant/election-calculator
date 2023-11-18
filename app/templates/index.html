@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Election Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+<body>
+    <h1>Election Calculator</h1>
+
+    <!-- First Table for Presidential Election -->
+    <table id="presidential-table">
+        <caption>Presidential Election</caption>
+        <thead>
+            <tr>
+                <th>State</th>
+                <th>Party</th>
+                <th>Electoral College Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <script>
+                // Array of state data (name and electoral votes) for all 50 states
+                const statesData = [
+                    { name: "Alabama", votes: 9 },
+                    { name: "Alaska", votes: 3 },
+                    { name: "Arizona", votes: 11 },
+                    { name: "Arkansas", votes: 6 },
+                    { name: "California", votes: 55 },
+                    { name: "California", votes: 55 },
+                    { name: "Colorado", votes: 9 },
+                    { name: "Connecticut", votes: 7 },
+                    { name: "Delaware", votes: 3 },
+                    { name: "Florida", votes: 29 },
+                    { name: "Georgia", votes: 16 },
+                    { name: "Hawaii", votes: 4 },
+                    { name: "Idaho", votes: 4 },
+                    { name: "Illinois", votes: 20 },
+                    { name: "Indiana", votes: 11 },
+                    { name: "Iowa", votes: 6 },
+                    { name: "Kansas", votes: 6 },
+                    { name: "Kentucky", votes: 8 },
+                    { name: "Louisiana", votes: 8 },
+                    { name: "Maine", votes: 4 },
+                    { name: "Maryland", votes: 10 },
+                    { name: "Massachusetts", votes: 11 },
+                    { name: "Michigan", votes: 16 },
+                    { name: "Minnesota", votes: 10 },
+                    { name: "Mississippi", votes: 6 },
+                    { name: "Missouri", votes: 10 },
+                    { name: "Montana", votes: 3 },
+                    { name: "Nebraska", votes: 5 },
+                    { name: "Nevada", votes: 6 },
+                    { name: "New Hampshire", votes: 4 },
+                    { name: "New Jersey", votes: 14 },
+                    { name: "New Mexico", votes: 5 },
+                    { name: "New York", votes: 29 },
+                    { name: "North Carolina", votes: 15 },
+                    { name: "North Dakota", votes: 3 },
+                    { name: "Ohio", votes: 18 },
+                    { name: "Oklahoma", votes: 7 },
+                    { name: "Oregon", votes: 7 },
+                    { name: "Pennsylvania", votes: 20 },
+                    { name: "Rhode Island", votes: 4 },
+                    { name: "South Carolina", votes: 9 },
+                    { name: "South Dakota", votes: 3 },
+                    { name: "Tennessee", votes: 11 },
+                    { name: "Texas", votes: 38 },
+                    { name: "Utah", votes: 6 },
+                    { name: "Vermont", votes: 3 },
+                    { name: "Virginia", votes: 13 },
+                    { name: "Washington", votes: 12 },
+                    { name: "West Virginia", votes: 5 },
+                    { name: "Wisconsin", votes: 10 },
+                    { name: "Wyoming", votes: 3 },
+                ];
+
+                for (const stateData of statesData) {
+                    document.write(`
+                        <tr data-state="${stateData.name}">
+                            <td>${stateData.name}</td>
+                            <td>
+                                <select class="party-select">
+                                    <option value="" disabled selected>- Select -</option>
+                                    <option value="Democrat">Democrat</option>
+                                    <option value="Independent">Independent</option>
+                                    <option value="Republican">Republican</option>
+                                </select>
+                            </td>
+                            <td data-electoral-votes="${stateData.votes}">${stateData.votes}</td>
+                        </tr>
+                    `);
+                }
+            </script>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total (Democrat):</td>
+                <td></td>
+                <td id="presidential-total-Democrat">0</td>
+                <td>Total (Independent):</td>
+                <td></td>
+                <td id="presidential-total-Independent">0</td>
+                <td>Total (Republican):</td>
+                <td></td>
+                <td id="presidential-total-Republican">0</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Additional tables can be added for Senate and House using the same method -->
+
+
+
+<!-- Inside your existing HTML file, add the email form below your election calculator content -->
+    <form method="POST" action="/">
+        <label for="email">Enter your email address:</label>
+        <input type="email" name="email" required><br><br>
+
+        <!-- Add a hidden field to store the election results -->
+        <input type="hidden" name="results" value="Total Election Results: {your results here}">
+
+        <input type="submit" value="Save and Send">
+    </form>
+</body>
+</html>

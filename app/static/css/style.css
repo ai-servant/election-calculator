@@ -1,0 +1,45 @@
+/* Add this code to style.css */
+h1 {
+    text-align: center;
+}
+
+#presidential-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+caption {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+}
+
+tr[data-state] {
+    cursor: pointer;
+}
+
+/* Define party colors */
+.party-Democrat {
+    background-color: blue;
+    color: white;
+}
+
+.party-Republican {
+    background-color: red;
+    color: white;
+}
+
+.party-Independent {
+    background-color: green;
+    color: white;
+}
