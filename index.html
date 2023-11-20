@@ -114,7 +114,6 @@
 
 <!-- Inside your existing HTML file, add the email form below your election calculator content -->
     <form method="POST" action="/">
-        {% csrf_token() %}
         <label for="email">Enter your email address:</label>
         <input type="email" name="email" required><br><br>
 
