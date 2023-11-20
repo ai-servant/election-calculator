@@ -1,9 +1,7 @@
-# app.py
-
 from flask import Flask, request, render_template
 from flask_mail import Mail, Message
 
-app = Flask(__name__, template_folder='.', static_folder='app/static')
+app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 # Configure your email settings
